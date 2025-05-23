@@ -1,25 +1,33 @@
 # Hello Circus
 
-A full-stack application built with React (TypeScript + Tailwind CSS), Go, and PostgreSQL.
+A modern full-stack application built with React (TypeScript + Tailwind CSS) for the frontend, Go for the backend API, and PostgreSQL for data persistence. The application is fully containerized and can be run either in development mode or using Docker containers.
 
 ## Project Structure
 
 ```
 .
-├── frontend/          # React + TypeScript + Tailwind CSS frontend
-├── backend/          # Go backend
-│   ├── cmd/         # Application entrypoints
-│   └── internal/    # Internal packages
-└── README.md
+├── frontend/         # React + TypeScript + Tailwind CSS frontend
+├── backend/         # Go backend
+│   ├── cmd/        # Application entrypoints
+│   └── internal/   # Internal packages
+├── docker-compose.yml # Docker composition configuration
+├── Dockerfile        # Backend service Dockerfile
+├── default.conf      # Nginx configuration
+└── Makefile         # Build and deployment automation
 ```
 
 ## Prerequisites
 
+For local development:
 - Node.js (v18 or later)
 - Go (v1.21 or later)
 - PostgreSQL (v14 or later)
 
-## Setup Instructions
+For Docker deployment:
+- Docker
+- Docker Compose
+
+## Development Setup
 
 ### Frontend Setup
 
@@ -73,6 +81,29 @@ The backend API will be available at `http://localhost:8080`
 
 2. The application will automatically connect to the database using the credentials provided in the `.env` file.
 
+## Docker Deployment
+
+The application can be run entirely using Docker containers. This setup includes:
+- Frontend service
+- Backend API service
+- PostgreSQL database
+
+To start the application using Docker:
+
+```bash
+docker-compose up -d
+```
+
+The services will be available at:
+- Frontend: http://localhost:5001
+- Backend API: http://localhost:5002
+- PostgreSQL: localhost:5432
+
+Environment variables for the database in Docker:
+- Database Name: hellocircus
+- Username: hellocircus
+- Password: hellocircus
+
 ## API Endpoints
 
 - `GET /api/health` - Health check endpoint
@@ -81,4 +112,20 @@ The backend API will be available at `http://localhost:8080`
 
 - Frontend code is in the `frontend/src` directory
 - Backend code is in the `backend/cmd` and `backend/internal` directories
-- Database configuration is in `backend/internal/database` 
+- Database configuration is in `backend/internal/database`
+
+## Build and Deployment
+
+The project includes a Makefile for common operations. Key commands:
+```bash
+make build    # Build the application
+make run      # Run the application
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request 
