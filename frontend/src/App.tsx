@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import CircusBackground from './components/CircusBackground'
 import FindCircuses from './pages/FindCircuses'
@@ -10,83 +10,7 @@ import MemeReveal from './pages/MemeReveal'
 const HomePage: React.FC = () => {
   return (
     <div className="h-full flex-1 flex flex-col relative overflow-hidden">
-      {/* Fireworks and Confetti */}
-      <div className="fixed inset-0 pointer-events-none z-40">
-        {/* Fireworks */}
-        <div className="absolute left-1/4 bottom-0 animate-firework-1">
-          <div className="h-2 w-2 bg-circus-gold rounded-full relative">
-            {[...Array(12)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute h-2 w-2 bg-circus-gold rounded-full"
-                style={{
-                  transform: `rotate(${i * 30}deg)`,
-                  transformOrigin: '0 0'
-                }}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="absolute left-1/2 bottom-0 animate-firework-2">
-          <div className="h-2 w-2 bg-circus-red rounded-full relative">
-            {[...Array(12)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute h-2 w-2 bg-circus-red rounded-full"
-                style={{
-                  transform: `rotate(${i * 30}deg)`,
-                  transformOrigin: '0 0'
-                }}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="absolute left-3/4 bottom-0 animate-firework-3">
-          <div className="h-2 w-2 bg-circus-gold rounded-full relative">
-            {[...Array(12)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute h-2 w-2 bg-circus-gold rounded-full"
-                style={{
-                  transform: `rotate(${i * 30}deg)`,
-                  transformOrigin: '0 0'
-                }}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Confetti */}
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <div 
-              key={i} 
-              className={`absolute w-2 h-2 animate-confetti-${i % 5 + 1}`}
-              style={{
-                left: `${Math.random() * 100}%`,
-                backgroundColor: ['var(--circus-gold)', 'var(--circus-red)', 'var(--circus-blue)', 'white'][Math.floor(Math.random() * 4)],
-                animationDelay: `${Math.random() * 5}s`
-              }}
-            ></div>
-          ))}
-        </div>
-
-        {/* Floating balloons */}
-        <div className="absolute -top-20 left-10 w-16 h-20 animate-float-1">
-          <div className="w-16 h-16 rounded-full bg-circus-red"></div>
-          <div className="w-1 h-20 bg-white/50 mx-auto -mt-2"></div>
-        </div>
-        <div className="absolute -top-20 right-20 w-16 h-20 animate-float-2">
-          <div className="w-16 h-16 rounded-full bg-circus-gold"></div>
-          <div className="w-1 h-20 bg-white/50 mx-auto -mt-2"></div>
-        </div>
-
-        {/* Spinning stars */}
-        <div className="absolute top-1/4 left-10 text-4xl animate-spin-glow">⭐</div>
-        <div className="absolute top-1/3 right-10 text-4xl animate-spin-glow-reverse">⭐</div>
-      </div>
+      <CircusBackground />
 
       {/* Circus Curtains */}
       <div className="fixed inset-0 z-50 pointer-events-none">
@@ -146,8 +70,6 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </div>
-
-      <CircusBackground />
 
       {/* Main content wrapper */}
       <div className="flex-1 flex flex-col">
@@ -262,7 +184,7 @@ const Navigation: React.FC<{ isMenuOpen: boolean; setIsMenuOpen: (open: boolean)
 }
 
 const App: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   return (
     <Router>

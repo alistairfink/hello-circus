@@ -111,7 +111,10 @@ const FindCircuses: React.FC = () => {
           <h2 className="text-3xl font-display text-circus-maroon mb-6">
             Ready to Join the Circus?
           </h2>
-          <button className="bg-circus-gold text-circus-maroon px-8 py-3 rounded-full text-lg font-bold hover:bg-circus-yellow hover:scale-105 transform transition-all">
+          <button 
+            onClick={() => navigate('/signup')}
+            className="bg-circus-gold text-circus-maroon px-8 py-3 rounded-full text-lg font-bold hover:bg-circus-yellow hover:scale-105 transform transition-all"
+          >
             Create Your Profile
           </button>
         </div>
