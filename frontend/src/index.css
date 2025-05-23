@@ -1,0 +1,256 @@
+@import './styles/animations.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --circus-red: #FF2B2B;
+  --circus-gold: #FFD700;
+  --circus-blue: #1E40AF;
+  --circus-cream: #FFF5E1;
+  --circus-maroon: #800000;
+  --circus-yellow: #FFE15D;
+}
+
+@layer base {
+  html {
+    background-color: var(--circus-cream);
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    color: var(--circus-maroon);
+  }
+}
+
+@layer utilities {
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+
+  @keyframes curtainLeft {
+    0% {
+      transform: scaleX(1) skewY(0deg);
+      filter: brightness(1);
+    }
+    100% {
+      transform: scaleX(0) skewY(-2deg);
+      filter: brightness(0.7);
+    }
+  }
+
+  @keyframes curtainRight {
+    0% {
+      transform: scaleX(1) skewY(0deg);
+      filter: brightness(1);
+    }
+    100% {
+      transform: scaleX(0) skewY(2deg);
+      filter: brightness(0.7);
+    }
+  }
+
+  .animate-curtain-left {
+    animation: curtainLeft 2.5s cubic-bezier(0.7, 0, 0.1, 1) 0.5s forwards;
+    transform-origin: left;
+  }
+
+  .animate-curtain-right {
+    animation: curtainRight 2.5s cubic-bezier(0.7, 0, 0.1, 1) 0.5s forwards;
+    transform-origin: right;
+  }
+
+  @keyframes fadeSlideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-slide-down {
+    animation: fadeSlideDown 0.8s ease-out;
+  }
+
+  .animate-fade-slide-up {
+    animation: fadeSlideUp 0.8s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  /* Firework animations */
+  @keyframes firework {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-40vh);
+    }
+    50.1% {
+      transform: translateY(-40vh) scale(1);
+    }
+    60% {
+      transform: translateY(-40vh) scale(6);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-40vh) scale(8);
+      opacity: 0;
+    }
+  }
+
+  .animate-firework-1 {
+    animation: firework 2s ease-out infinite;
+    animation-delay: 0s;
+  }
+
+  .animate-firework-2 {
+    animation: firework 2s ease-out infinite;
+    animation-delay: 0.7s;
+  }
+
+  .animate-firework-3 {
+    animation: firework 2s ease-out infinite;
+    animation-delay: 1.4s;
+  }
+
+  .animate-firework-particle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: firework-particle 0.8s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+    animation-delay: var(--particle-delay);
+    opacity: 0;
+    mix-blend-mode: screen;
+    box-shadow: 0 0 4px currentColor;
+  }
+
+  .firework-burst {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+  }
+
+  @keyframes show-burst {
+    0%, 49.9% {
+      opacity: 0;
+    }
+    50%, 75% {
+      opacity: 1;
+    }
+    75.1%, 100% {
+      opacity: 0;
+    }
+  }
+
+  /* Confetti animations */
+  @keyframes confetti-fall {
+    0% {
+      transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+    }
+  }
+
+  .animate-confetti-1 {
+    animation: confetti-fall 4s linear infinite;
+  }
+  .animate-confetti-2 {
+    animation: confetti-fall 5s linear infinite;
+  }
+  .animate-confetti-3 {
+    animation: confetti-fall 6s linear infinite;
+  }
+  .animate-confetti-4 {
+    animation: confetti-fall 7s linear infinite;
+  }
+  .animate-confetti-5 {
+    animation: confetti-fall 8s linear infinite;
+  }
+
+  /* Balloon float animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+    }
+    25% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    50% {
+      transform: translateY(-35px) translateX(-10px);
+    }
+    75% {
+      transform: translateY(-20px) translateX(5px);
+    }
+  }
+
+  .animate-float-1 {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-float-2 {
+    animation: float 9s ease-in-out infinite reverse;
+  }
+
+  /* Spinning star animations */
+  @keyframes spin-glow {
+    0% {
+      transform: rotate(0deg) scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: rotate(180deg) scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+      opacity: 0.5;
+    }
+  }
+
+  .animate-spin-glow {
+    animation: spin-glow 4s linear infinite;
+    filter: drop-shadow(0 0 10px var(--circus-gold));
+  }
+
+  .animate-spin-glow-reverse {
+    animation: spin-glow 4s linear infinite reverse;
+    filter: drop-shadow(0 0 10px var(--circus-gold));
+  }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Trapeze Artist -->
+  <g class="trapeze-artist">
+    <path d="M200 100 Q300 50 400 100" stroke="#800000" stroke-width="8"/>
+    <circle cx="300" cy="120" r="20" fill="#800000"/>
+    <path d="M300 135 L300 170 M285 150 L315 150 M300 170 L285 200 M300 170 L315 200" stroke="#800000" stroke-width="8"/>
+  </g>
+
+  <!-- Juggler -->
+  <g class="juggler" transform="translate(0, 50)">
+    <circle cx="600" cy="150" r="20" fill="#800000"/>
+    <path d="M600 165 L600 200 M585 180 L615 180 M600 200 L585 230 M600 200 L615 230" stroke="#800000" stroke-width="8"/>
+    <circle cx="580" cy="130" r="8" fill="#800000"/>
+    <circle cx="600" cy="110" r="8" fill="#800000"/>
+    <circle cx="620" cy="130" r="8" fill="#800000"/>
+  </g>
+
+  <!-- Acrobat -->
+  <g class="acrobat" transform="translate(0, 100)">
+    <circle cx="900" cy="150" r="20" fill="#800000"/>
+    <path d="M900 165 Q870 200 900 230 M900 165 Q930 200 900 230" stroke="#800000" stroke-width="8"/>
+  </g>
+</svg> 

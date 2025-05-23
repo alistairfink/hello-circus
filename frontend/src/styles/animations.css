@@ -1,0 +1,148 @@
+@keyframes swingAcross {
+  0% {
+    transform: rotate(-35deg) translateY(-2%);
+  }
+  50% {
+    transform: rotate(35deg) translateY(-2%);
+  }
+  100% {
+    transform: rotate(-35deg) translateY(-2%);
+  }
+}
+
+@keyframes swingBack {
+  0% {
+    transform: rotate(35deg) translateY(-2%);
+  }
+  50% {
+    transform: rotate(-35deg) translateY(-2%);
+  }
+  100% {
+    transform: rotate(35deg) translateY(-2%);
+  }
+}
+
+@keyframes stretchRope {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  25%, 75% {
+    transform: scaleY(1.015);
+  }
+  50% {
+    transform: scaleY(0.985);
+  }
+}
+
+@keyframes juggle {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.circus-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  color: var(--circus-maroon);
+  overflow: hidden;
+}
+
+.circus-performer {
+  position: absolute;
+  width: 70vmin;
+  height: 70vmin;
+  opacity: 0.35;
+  will-change: transform;
+  transform-origin: 50% 0;
+  left: calc(50% - 35vmin);
+}
+
+.circus-performer svg {
+  width: 100%;
+  height: 100%;
+  color: inherit;
+}
+
+.trapeze-group {
+  transform-origin: 50% 0;
+}
+
+.rope-left, .rope-right {
+  transform-origin: top;
+  animation: stretchRope 4s ease-in-out infinite;
+}
+
+.performer {
+  transform-origin: 50% 0;
+}
+
+.trapeze-artist {
+  animation: float 3s ease-in-out infinite;
+}
+
+.juggler {
+  animation: float 2s ease-in-out infinite;
+}
+
+.acrobat {
+  animation: float 2.5s ease-in-out infinite;
+}
+
+/* Position performers */
+.performer-1 {
+  top: 5vh;
+  animation: swingAcross 7s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.performer-2 {
+  top: 15vh;
+  animation: swingBack 7s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  animation-delay: -2.33s;
+}
+
+.performer-3 {
+  top: 25vh;
+  animation: swingAcross 7s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  animation-delay: -4.66s;
+}
+
+.performer-4 {
+  top: 40%;
+  left: 50%;
+  transform: scale(1.1);
+}
+
+.performer-5 {
+  bottom: 10%;
+  right: 15%;
+  transform: scale(0.85) rotate(15deg);
+}
+
+.performer-6 {
+  top: 60%;
+  left: 10%;
+  transform: scale(0.95) rotate(-15deg);
+} 

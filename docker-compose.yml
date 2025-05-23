@@ -1,0 +1,31 @@
+services:
+  db:
+    image: daddca4f7ffe3110990559ccac7ae616a749a1c76838b7dd95ea85205c759
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: hellocircus
+      POSTGRES_PASSWORD: hellocircus
+      POSTGRES_DB: hellocircus
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hellocircus"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  service:
+    image: 69de5e8e884a49e6edbff4da508fd4c948dd295bba159095f71f17d7daa32
+    restart: unless-stopped
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: hellocircus
+      DB_PASSWORD: hellocircus
+      DB_NAME: hellocircus
+    ports:
+      - "5001:5000"
+      - "5002:5001"
+    depends_on:
+      - db
