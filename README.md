@@ -2,6 +2,19 @@
 
 A modern full-stack application built with React (TypeScript + Tailwind CSS) for the frontend, Go for the backend API, and PostgreSQL for data persistence. The application is fully containerized and can be run either in development mode or using Docker containers.
 
+## About
+
+Hello Circus is a revolutionary career transition platform designed specifically for software engineers looking to pursue their dreams under the big top. Our platform bridges the gap between the tech world and the circus arts, helping talented developers transform their logical precision and problem-solving skills into graceful aerial performances, mesmerizing juggling acts, and spectacular acrobatic feats.
+
+Whether you're a full-stack developer yearning to become a trapeze artist, or a DevOps engineer dreaming of clown school, Hello Circus provides:
+- Personalized matching with circus companies worldwide
+- Skills assessment to map your tech expertise to circus disciplines
+- Training program recommendations
+- Community support from other tech-to-circus transitioners
+- Resume translation (from Git commits to circus achievements)
+
+Visit us at [hellocircus.app.alistairfink.com](https://hellocircus.app.alistairfink.com) to begin your journey from debugging code to dazzling audiences.
+
 ## Project Structure
 
 ```
