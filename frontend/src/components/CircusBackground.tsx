@@ -115,12 +115,36 @@ const CircusBackground = () => {
             100% { transform: rotate(15deg); }
           }
           @keyframes moveToLeft {
-            0% { transform: translateX(100%) scale(0.8); }
-            100% { transform: translateX(0) scale(0.8); }
+            0% { 
+              transform: translateX(100%) scale(0.4);
+            }
+            100% { 
+              transform: translateX(0) scale(0.4);
+            }
           }
           @keyframes moveToRight {
-            0% { transform: translateX(-100%) scale(0.8); }
-            100% { transform: translateX(0) scale(0.8); }
+            0% { 
+              transform: translateX(-100%) scale(0.4);
+            }
+            100% { 
+              transform: translateX(0) scale(0.4);
+            }
+          }
+          @keyframes moveToLeftDesktop {
+            0% { 
+              transform: translateX(100%) scale(0.8);
+            }
+            100% { 
+              transform: translateX(0) scale(0.8);
+            }
+          }
+          @keyframes moveToRightDesktop {
+            0% { 
+              transform: translateX(-100%) scale(0.8);
+            }
+            100% { 
+              transform: translateX(0) scale(0.8);
+            }
           }
           .fire-breather-left {
             animation: moveToLeft 3s forwards;
@@ -128,6 +152,9 @@ const CircusBackground = () => {
             left: 5%;
             bottom: 20%;
             z-index: 1;
+            @media (min-width: 640px) {
+              animation: moveToLeftDesktop 3s forwards;
+            }
           }
           .fire-breather-right {
             animation: moveToRight 3s forwards;
@@ -135,6 +162,9 @@ const CircusBackground = () => {
             right: 5%;
             bottom: 20%;
             z-index: 1;
+            @media (min-width: 640px) {
+              animation: moveToRightDesktop 3s forwards;
+            }
           }
           .walking {
             animation: none;

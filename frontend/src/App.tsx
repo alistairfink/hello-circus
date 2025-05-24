@@ -74,7 +74,7 @@ const HomePage: React.FC = () => {
       {/* Main content wrapper */}
       <div className="flex-1 flex flex-col">
         {/* Hero Section */}
-        <div className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+        <div className="mt-20 flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
           <div className="text-center relative w-full py-8">
             <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 text-6xl animate-bounce-slow">
               🎪
